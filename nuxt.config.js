@@ -141,6 +141,10 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    // https://vue-scrollto.netlify.app/
+    'vue-scrollto/nuxt',
+    // https://github.com/nicolasbeauvais/vue-social-sharing
+    'vue-social-sharing/nuxt'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
