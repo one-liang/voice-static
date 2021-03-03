@@ -1,0 +1,24 @@
+/* page transition */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.15s;
+}
+
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+}
+
+/* recaptcha v3 */
+.grecaptcha-badge {
+  z-index: 50 !important;
+}
+
+img[lazy='loading'] {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+}
