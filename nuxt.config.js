@@ -114,7 +114,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['~/assets/css/variables.css', '~/assets/css/main.css'],
+  css: ['~/assets/css/main.css'],
 
   // loading-bar
   loading: {

@@ -6,42 +6,29 @@ module.exports = {
   purge: {
     // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
     enabled: process.env.NODE_ENV === 'production',
-    content: [
-      'components/**/*.vue',
-      'layouts/**/*.vue',
-      'pages/**/*.vue',
-      'plugins/**/*.js',
-      'nuxt.config.js'
-    ],
     options: {
-      whitelist: ['text-teal', 'order-4', 'order-5']
+      safelist: ['text-teal']
     }
   },
   theme: {
     fontFamily: {
       sans: ['Arial', 'Microsoft JhengHei', 'sans-serif']
     },
-    maxHeight: {
-      16: '4rem'
-    },
-    borderWidth: {
-      default: '1px',
-      0: '0',
-      2: '2px',
-      3: '3px',
-      4: '4px',
-      6: '6px',
-      8: '8px'
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px'
     },
     extend: {
       colors: {
         primary: {
           light: '#ffd943',
-          default: '#ffb01c'
+          DEFAULT: '#ffb01c'
         },
         secondary: {
           light: '#ffe3d7',
-          default: '#ff6d2d',
+          DEFAULT: '#ff6d2d',
           dark: '#99411b'
         },
         black: '#1e1e1e',
@@ -70,26 +57,33 @@ module.exports = {
           900: '#2a4365'
         },
         pink: {
-          default: '#eaac9d',
+          DEFAULT: '#eaac9d',
           light: '#fef0f0'
         },
         yellow: {
           light: '#fdf6e9',
-          default: '#b49d73',
+          DEFAULT: '#b49d73',
           dark: '#776e60',
           darker: '#97614f'
         },
         teal: '#107893',
         red: {
-          default: '#ff0000',
+          DEFAULT: '#ff0000',
           light: '#e70404'
         }
+      },
+      borderWidth: {
+        3: '3px',
+        6: '6px'
       },
       height: {
         90: '90px',
         100: '100px',
         110: '110px',
         150: '150px'
+      },
+      maxHeight: {
+        16: '4rem'
       },
       inset: {
         '-2': '-0.5rem',

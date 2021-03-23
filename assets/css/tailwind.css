@@ -1,0 +1,105 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@tailwind screens;
+
+/* tailwind components */
+@layer components {
+  @responsive {
+    /* button */
+    .btn {
+      @apply transition duration-150 ease-linear;
+    }
+    .btn:focus {
+      @apply outline-none;
+    }
+    .btn-secondary {
+      @apply text-white rounded bg-secondary;
+    }
+    .btn-secondary:hover {
+      @apply bg-secondary-dark;
+    }
+
+    .btn-secondary-rounded-full {
+      @apply text-white rounded-full bg-secondary;
+    }
+    .btn-secondary-rounded-full:hover {
+      @apply bg-secondary-dark;
+    }
+
+    .btn-gray {
+      @apply text-white bg-gray-500 rounded;
+    }
+    .btn-gray:hover {
+      @apply bg-gray-600;
+    }
+
+    /* outline button */
+    .btn-outline-white {
+      @apply text-white border border-white rounded-full;
+    }
+    .btn-outline-white:hover {
+      @apply bg-white text-primary;
+    }
+
+    .btn-outline-secondary-white {
+      @apply text-white border border-white rounded-full;
+    }
+    .btn-outline-secondary-white:hover {
+      @apply bg-secondary;
+    }
+
+    .btn-outline-black {
+      @apply text-black border border-black rounded-full;
+    }
+    .btn-outline-black:hover {
+      @apply text-white bg-black;
+
+    }
+
+    .btn-outline-secondary {
+      @apply border rounded-full text-secondary border-secondary;
+    }
+    .btn-outline-secondary:hover {
+      @apply text-white bg-secondary;
+    }
+
+    .btn-outline-gray {
+      @apply text-gray-600 border border-gray-600 rounded-full;
+    }
+    .btn-outline-gray:hover {
+      @apply text-white bg-secondary border-secondary;
+    }
+
+    .btn-outline-gray--active {
+      @apply text-white bg-secondary border-secondary;
+    }
+
+    /* line-clamp */
+    .line-clamp {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .line-clamp-1 {
+      -webkit-line-clamp: 1;
+    }
+    .line-clamp-2 {
+      -webkit-line-clamp: 2;
+    }
+    .line-clamp-3 {
+      -webkit-line-clamp: 3;
+    }
+    .line-clamp-4 {
+      -webkit-line-clamp: 4;
+    }
+
+    /* 驗證失敗 */
+    .invalid {
+      @apply border-red-light bg-pink-light !important;
+    }
+  }
+}
