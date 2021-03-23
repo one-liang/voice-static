@@ -157,5 +157,11 @@ export default {
         'postcss-nested': {}
       }
     }
+  },
+
+  // https://github.com/tailwindlabs/tailwindcss-jit
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+    jit: true
   }
 }
