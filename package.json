@@ -12,6 +12,7 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
+    "clipboard": "^2.0.8",
     "core-js": "^3.8.3",
     "nuxt": "^2.15.3",
     "swiper": "^6.5.0",

@@ -129,7 +129,8 @@ export default {
     { src: '~/plugins/vue-swiper.js', mode: 'client' },
     { src: '~/plugins/star-rating.js', mode: 'client' },
     { src: '~/plugins/vue-tailwind.js', mode: 'client' },
-    { src: '~/plugins/vee-validate', mode: 'client' }
+    { src: '~/plugins/vee-validate', mode: 'client' },
+    { src: '~/plugins/clipboard.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
