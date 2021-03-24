@@ -97,7 +97,7 @@
 
     <!-- ranking 排行榜 -->
     <section
-      v-if="true"
+      v-if="false"
       style="background-image: url('/cover/ranking.jpg')"
       class="bg-mask bg-mask-black"
     >
@@ -150,7 +150,7 @@
     </section>
 
     <!-- podcasts 聽節目 -->
-    <section v-if="false" class="pb-8 pl-4 bg-gradient-blue xl:px-20 lg:px-6 lg:pb-20">
+    <section v-if="true" class="pb-8 pl-4 bg-gradient-blue xl:px-20 lg:px-6 lg:pb-20">
       <div class="container mx-auto">
         <MainTitle
           theme-color="secondary"
