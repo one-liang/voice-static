@@ -128,7 +128,8 @@ export default {
     { src: '~/plugins/vue-lazyload', mode: 'client' },
     { src: '~/plugins/vue-swiper.js', mode: 'client' },
     { src: '~/plugins/star-rating.js', mode: 'client' },
-    { src: '~/plugins/vue-tailwind.js', mode: 'client' }
+    { src: '~/plugins/vue-tailwind.js', mode: 'client' },
+    { src: '~/plugins/vee-validate', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -152,6 +153,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    transpile: ['vee-validate/dist/rules'],
+    optimization: {
+      splitChunks: {
+        maxSize: 51200
+      }
+    },
     postcss: {
       plugins: {
         'postcss-nested': {}
