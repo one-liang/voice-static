@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 主視覺輪播 -->
-    <section v-if="true" class="relative bg-primary">
+    <section v-if="false" class="relative bg-primary">
       <client-only>
         <SwiperMain />
       </client-only>
@@ -97,7 +97,7 @@
 
     <!-- ranking 排行榜 -->
     <section
-      v-if="false"
+      v-if="true"
       style="background-image: url('/cover/ranking.jpg')"
       class="bg-mask bg-mask-black"
     >
