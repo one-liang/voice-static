@@ -105,7 +105,7 @@
             <div
               class="absolute bottom-0 w-full space-x-2 overflow-x-auto whitespace-nowrap"
             >
-              <template v-for="tag in 1">
+              <template v-for="tag in 5">
                 <NLink
                   :key="`tag_${tag}`"
                   :to="{
