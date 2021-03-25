@@ -77,8 +77,7 @@ export default {
       }
 
       if (
-        this.collectType === 'audiobook' &&
-        this.user.type === 'subscriber'
+        this.collectType === 'audiobook'
       ) {
         return 'square-start'
       }
