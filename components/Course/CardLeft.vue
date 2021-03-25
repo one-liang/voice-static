@@ -2,13 +2,14 @@
   <div class="work">
     <div class="flex items-start w-full">
       <NuxtLink
-        :to="{ name: 'podcasts-podcast', params: { podcast: 1 } }"
+        :to="{ name: 'courses-course', params: { course: 1 } }"
         class="work__cover"
       >
         <img
           v-lazy=""
           class="absolute object-cover w-full h-full"
         >
+        <span class="album-tag">單購</span>
       </NuxtLink>
       <div
         class="flex flex-col justify-between w-full h-100 lg:h-full lg:flex-row"
@@ -16,43 +17,38 @@
         <section class="relative w-full overflow-hidden lg:w-2/3">
           <div class="flex mb-2">
             <span
-              class="inline-block px-2 text-sm leading-5 tracking-wide text-white whitespace-nowrap font-base bg-blue-dark"
-            >節目</span>
+              class="inline-block px-2 text-sm leading-5 tracking-wide text-white whitespace-nowrap font-base bg-teal"
+            >課程</span>
             <template v-for="(category, index) in 1">
               <NuxtLink
                 v-if="index === 0"
-                :key="`program_category_${category}`"
-                :to="{ name: 'podcasts', query: { category: category } }"
-                class="ml-2 text-sm tracking-wide truncate font-base text-blue-dark"
+                :key="`course_category_${category}`"
+                :to="{ name: 'courses', query: { category: category } }"
+                class="ml-2 text-sm tracking-wide truncate font-base text-teal"
               >
-                專輯名稱
+                分類名稱
               </NuxtLink>
             </template>
           </div>
           <h4 class="work__title line-clamp line-clamp-1">
             <NuxtLink
-              :to="{
-                name: 'podcasts-podcast',
-                params: { podcast: 1 },
-              }"
+              :to="{ name: 'courses-course', params: { course: 1 } }"
             >
-              節目名稱
+              課程名稱
             </NuxtLink>
           </h4>
           <div class="hidden lg:block">
             <div class="flex flex-wrap mb-2">
-              <div
-                v-if="true"
-                class="flex flex-wrap mb-2 mr-3"
-              >
+              <div class="flex flex-wrap mb-2 mr-3">
                 <span
+                  v-if="true"
                   class="pr-1 mr-1 text-sm leading-3 text-gray-600 border-r border-gray-600"
                 >主持人</span>
                 <template v-for="presenter in 3">
                   <NuxtLink
-                    :key="`program_presenter_${presenter}`"
+                    :key="`course_presenter_${presenter}`"
                     :to="{
-                      name: `voices-presenter-id`,
+                      name: 'voices-course-presenter-id',
                       params: { id: presenter },
                     }"
                     class="text-sm leading-3 text-gray-600 symbol"
@@ -88,7 +84,7 @@
                   :key="`tag_${tag}`"
                   :to="{
                     name: 'tags',
-                    query: { type: 'podcast', tag: tag },
+                    query: { type: 'course', tag: tag },
                   }"
                   class="px-2 py-1 text-sm leading-5 text-gray-600 bg-gray-300 rounded-full"
                 >
@@ -98,50 +94,68 @@
             </div>
           </div>
         </section>
-        <div class="flex flex-col justify-between w-full lg:items-end lg:w-1/3">
-          <div class="flex flex-col">
-            <client-only>
-              <StarRating
-                :rating="4"
-                :read-only="true"
-                :star-size="15"
-                :increment="0.01"
-                :show-rating="false"
-                active-color="#36568d"
-              />
-            </client-only>
-            <span
-              class="mt-1 text-sm text-gray-600 lg:text-right lg:mb-2"
-            >4 (10)</span>
+        <div class="flex flex-col items-end justify-between w-full lg:w-1/3">
+          <div class="flex items-end justify-between w-full lg:flex-col">
+            <div class="flex flex-col">
+              <client-only>
+                <StarRating
+                  :rating="4"
+                  :read-only="true"
+                  :star-size="15"
+                  :increment="0.01"
+                  :show-rating="false"
+                  active-color="#107893"
+                />
+              </client-only>
+              <span
+                class="mt-1 text-sm text-gray-600 lg:text-right lg:mb-2"
+              >4 (10)</span>
+            </div>
+            <div class="flex flex-col items-end leading-8 lg:flex-row">
+              <p class="text-sm text-gray-600 lg:mr-2">
+                單購價
+              </p>
+              <p class="leading-3 lg:leading-8 text-secondary">
+                <span class="text-lg font-bold lg:text-4xl">199</span>
+                <span class="text-sm font-bold">元</span>
+              </p>
+            </div>
           </div>
-          <PlayerPlayButton
-            collect-type="program"
-            collect="1"
-            class="items-center justify-center hidden px-8 py-1 text-sm font-medium leading-6 tracking-widest lg:flex btn btn-secondary"
-          />
+          <div class="flex-col hidden space-y-2 lg:flex">
+            <ShoppingCartAddButton
+              v-if="true"
+              id="1"
+              type="course"
+              class="px-8 py-1 text-sm font-medium leading-6 tracking-widest btn btn-gray"
+            />
+            <PlayerPlayButton
+              collect-type="course"
+              collect="1"
+              :have="false"
+              class="flex items-center justify-center px-8 py-1 text-sm font-medium leading-6 tracking-widest btn btn-secondary"
+            />
+          </div>
         </div>
       </div>
     </div>
     <section class="mt-4 lg:hidden">
       <div class="flex flex-wrap mb-2">
-        <div
-          v-if="true"
-          class="flex flex-wrap mb-2 mr-3"
-        >
+        <div class="flex flex-wrap mb-2 mr-3">
           <span
+            v-if="true"
             class="pr-1 mr-1 text-sm leading-3 text-gray-600 border-r border-gray-600"
           >主持人</span>
           <template v-for="presenter in 3">
-            <NuxtLink
-              :key="`program_presenter_${presenter}`"
+            <NLink
+              :key="`course_presenter_${presenter}`"
               :to="{
-                name: `voices-presenter-id`,
+                name: 'voices-course-presenter-id',
                 params: { id: presenter },
               }"
               class="text-sm leading-3 text-gray-600 symbol"
             >
               主持人名稱
-            </NuxtLink>
+            </NLink>
           </template>
         </div>
         <div
@@ -168,7 +182,7 @@
             :key="`tag_${tag}`"
             :to="{
               name: 'tags',
-              query: { type: 'podcast', tag: tag },
+              query: { type: 'course', tag: tag },
             }"
             class="px-2 py-1 text-sm leading-5 text-gray-600 bg-gray-300 rounded-full"
           >
@@ -176,18 +190,27 @@
           </NLink>
         </template>
       </div>
-      <PlayerPlayButton
-        collect-type="program"
-        collect="1"
-        class="flex items-center justify-center flex-1 w-full py-1 text-sm font-medium leading-6 tracking-widest btn btn-secondary"
-      />
+      <div class="flex space-x-2">
+        <ShoppingCartAddButton
+          v-if="true"
+          id="1"
+          type="course"
+          class="flex-1 px-4 py-1 text-sm font-medium leading-6 tracking-widest btn btn-gray"
+        />
+        <PlayerPlayButton
+          collect-type="course"
+          collect="1"
+          :have="false"
+          class="flex items-center justify-center flex-1 px-4 py-1 text-sm font-medium leading-6 tracking-widest btn btn-secondary"
+        />
+      </div>
     </section>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'PodcastCardLeft'
+  name: 'CourseCardLeft'
 }
 </script>
 
@@ -215,6 +238,12 @@ export default {
   }
 }
 
+.album-tag {
+  @apply absolute left-0 top-0 bg-primary text-white text-xs mt-3 rounded-r-md;
+
+  padding: 2px 6px;
+}
+
 .symbol:not(:last-child)::after {
   content: '、';
 }
@@ -233,6 +262,12 @@ export default {
     &__content {
       @apply mb-8;
     }
+  }
+
+  .album-tag {
+    @apply text-sm mt-4;
+
+    padding: 2px 8px;
   }
 }
 </style>
