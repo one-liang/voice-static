@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 主視覺輪播 -->
-    <section v-if="false" class="relative bg-primary">
+    <section v-if="true" class="relative bg-primary">
       <client-only>
         <SwiperMain />
       </client-only>
@@ -56,7 +56,7 @@
     </section>
 
     <!-- discover 發現 -->
-    <section v-if="false" class="pb-8 pl-4 bg-primary xl:px-20 lg:px-6 lg:pb-20">
+    <section v-if="true" class="pb-8 pl-4 bg-primary xl:px-20 lg:px-6 lg:pb-20">
       <div class="container relative mx-auto">
         <div class="relative z-10 mr-4 transform -translate-y-4">
           <MainTitle theme-color="white" class="mb-6">
@@ -97,7 +97,7 @@
 
     <!-- ranking 排行榜 -->
     <section
-      v-if="false"
+      v-if="true"
       style="background-image: url('/cover/ranking.jpg')"
       class="bg-mask bg-mask-black"
     >
@@ -193,7 +193,7 @@
     </section>
 
     <!-- audiobooks 有聲書 -->
-    <section v-if="false" class="pb-8 pl-4 bg-gradient-gray xl:px-20 lg:px-6 lg:pb-20">
+    <section v-if="true" class="pb-8 pl-4 bg-gradient-gray xl:px-20 lg:px-6 lg:pb-20">
       <div class="container mx-auto">
         <MainTitle theme-color="black" class="mb-6 transform -translate-y-4">
           <template slot="titleEN">
@@ -232,7 +232,7 @@
       </div>
     </section>
     <!-- courses 聽課程 -->
-    <section v-if="false" class="pb-8 pl-4 bg-gradient-teal xl:px-20 lg:px-6 lg:pb-20">
+    <section v-if="true" class="pb-8 pl-4 bg-gradient-teal xl:px-20 lg:px-6 lg:pb-20">
       <div class="container mx-auto">
         <MainTitle
           theme-color="primary-light"
@@ -275,7 +275,7 @@
     </section>
 
     <!-- publishers 出版社專區 -->
-    <section v-if="false" class="relative pb-8 pl-4 bg-primary xl:px-20 lg:px-6 lg:pb-20">
+    <section v-if="true" class="relative pb-8 pl-4 bg-primary xl:px-20 lg:px-6 lg:pb-20">
       <div class="container relative z-10 mx-auto">
         <div class="relative mr-4 transform -translate-y-4">
           <MainTitle theme-color="white" class="mb-6">
@@ -340,7 +340,7 @@
     </section>
 
     <!-- voices 節目主持人/有聲書主播 -->
-    <section v-if="false" class="pb-8 pl-4 bg-white xl:px-20 lg:px-6 lg:pb-20">
+    <section v-if="true" class="pb-8 pl-4 bg-white xl:px-20 lg:px-6 lg:pb-20">
       <div class="container relative mx-auto">
         <div class="relative mr-4 transform -translate-y-4">
           <MainTitle theme-color="black" class="mb-6">
@@ -388,7 +388,7 @@
 
     <!-- plan-2 聽方案 -->
     <section
-      v-if="false"
+      v-if="true"
       v-lazy:background-image="'/cover/plan-2.jpg'"
       class="bg-mask bg-mask-yellow"
     >
@@ -422,7 +422,7 @@
               </SubTitle>
             </header>
             <section
-              v-if="false"
+              v-if="true"
               class="grid px-4 pt-6 pb-8 lg:pb-20 lg:pt-8 lg:gap-4 lg:px-8"
             >
               <p class="mb-1 font-medium text-white lg:text-xl lg:mb-0">
